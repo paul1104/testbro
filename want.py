@@ -515,7 +515,7 @@ while True:
                                 xname = client.getContact(op.param2).displayName
                                 Oa = 'ud4082219b6754e7b610f84d07d3b436b'
                                 client.sendContact(op.param1, Oa)
-                                sendMention(op.param1, "тerιмa ĸaѕιн @! тelaн мengυndang вoт ιnι!\n\nwajιв add oa dιaтaѕ! \nĸeтιĸ нelp υnтυĸ мelιнaт ғιтυre вoт ιnι!", [op.param2])                                                        
+                                client.sendMention(op.param1, "тerιмa ĸaѕιн @! тelaн мengυndang вoт ιnι!\n\nwajιв add oa dιaтaѕ! \nĸeтιĸ нelp υnтυĸ мelιнaт ғιтυre вoт ιnι!", [op.param2])                                                        
                         else:
                             client.acceptGroupInvitation(op.param1)
                             Oa = 'ud4082219b6754e7b610f84d07d3b436b'
