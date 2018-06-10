@@ -501,34 +501,31 @@ while True:
                 #print op.param2
                 #print op.param3
                 if mid in op.param3:
-                    G = cl.getGroup(op.param1)
+                    G = client.getGroup(op.param1)
                     if wait["autoJoin"] == True:
                         if wait["autoCancel"]["on"] == True:
                             if len(G.members) <= wait["autoCancel"]["members"]:
                                 client.acceptGroupInvitation(op.param1)
-                                c = Message(to=op.param1, from_=None, text=None, contentType=13)
-                                c.contentMetadata={'mid':'ud4082219b6754e7b610f84d07d3b436b'}
-                                client.sendMessage(c)
+                                Oa = 'ud4082219b6754e7b610f84d07d3b436b'
+                                client.sendKontok(op.param1, Oa)
                                 client.sendMessage(op.param1,"мaaғ! мeмвer anda вelυм мencυĸυpι😊 ѕιlaнĸan нυвυngι oa dιaтaѕ!")
                                 client.leaveGroup(op.param1)
                             else:
                                 client.acceptGroupInvitation(op.param1)
                                 xname = client.getContact(op.param2).displayName
-                                c = Message(to=op.param1, from_=None, text=None, contentType=13)
-                                c.contentMetadata={'mid':'ud4082219b6754e7b610f84d07d3b436b'}
-                                client.sendMessage(c)
+                                Oa = 'ud4082219b6754e7b610f84d07d3b436b'
+                                client.sendKontok(op.param1, Oa)
                                 client.sendMentionV2(op.param1, "тerιмa ĸaѕιн @! тelaн мengυndang вoт ιnι!\n\nwajιв add oa dιaтaѕ! \nĸeтιĸ нelp υnтυĸ мelιнaт ғιтυre вoт ιnι!", [op.param2])                                                        
                         else:
                             client.acceptGroupInvitation(op.param1)
-                            c = Message(to=op.param1, from_=None, text=None, contentType=13)
-                            c.contentMetadata={'mid':'ud4082219b6754e7b610f84d07d3b436b'}
-                            client.sendMessage(c)
+                            Oa = 'ud4082219b6754e7b610f84d07d3b436b'
+                            client.sendKontok(op.param1, Oa)
                             client.sendMessage(op.param1, "wajιв add oa dιaтaѕ! \nĸeтιĸ нelp υnтυĸ мelιнaт ғιтυre вoт ιnι!")
                     elif wait["autoCancel"]["on"] == True:
                         if len(G.members) <= wait["autoCancel"]["members"]:
                             client.acceptGroupInvitation(op.param1)
-                            c.contentMetadata={'mid':'ud4082219b6754e7b610f84d07d3b436b'}
-                            client.sendMessage(c)
+                            Oa = 'ud4082219b6754e7b610f84d07d3b436b'
+                            client.sendKontok(op.param1, Oa)
                             client.sendMessage(op.param1,"мaaғ! мeмвer anda вelυм мencυĸυpι😊 ѕιlaнĸan нυвυngι oa dιaтaѕ!")
                             client.leaveGroup(op.param1)
                 else:
