@@ -13,23 +13,24 @@ import subprocess,os,requests,goslate,ctypes
 import ast
 import subprocess
 import urllib
-import urllib2
+#import urllib2
 import urllib3
-import cookielib
+#import cookielib
 import wikipedia
 import shutil
 
 #cl = LineClient() ----> Buat Login by QR
-cl = LineClient(authToken='Et1fd26gCtgbLdd2jDgb.ggNCLqZ5irfKOvdzgQfq2W.EcY3RGwnjaFPDOgsRiTBxCjdpA9By/UR4Yq00WtS09M=')
+cl = LINE(authToken='Et1fd26gCtgbLdd2jDgb.ggNCLqZ5irfKOvdzgQfq2W.EcY3RGwnjaFPDOgsRiTBxCjdpA9By/UR4Yq00WtS09M=')
 cl.log("Auth Token : " + str(cl.authToken))
 
 # Initialize LineChannel with LineClient
-channel = LineChannel(cl)
-cl.log("Channel Access Token : " + str(channel.channelAccessToken))
+cl.log("Channel Access Token : " + str(cl.tl.channelAccessToken))
 
 botStart = time.time()
 
-poll = LinePoll(cl)
+# Initialize OEPoll with LINE instance
+oepoll = OEPoll(line)
+
 creator = ["ud4082219b6754e7b610f84d07d3b436b"]
 Qmid = cl.getProfile().mid
 KAC = [cl]
