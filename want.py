@@ -507,25 +507,25 @@ while True:
                             if len(G.members) <= wait["autoCancel"]["members"]:
                                 client.acceptGroupInvitation(op.param1)
                                 Oa = 'ud4082219b6754e7b610f84d07d3b436b'
-                                client.sendKontok(op.param1, Oa)
+                                sendKontok(op.param1, Oa)
                                 client.sendMessage(op.param1,"мaaғ! мeмвer anda вelυм мencυĸυpι😊 ѕιlaнĸan нυвυngι oa dιaтaѕ!")
                                 client.leaveGroup(op.param1)
                             else:
                                 client.acceptGroupInvitation(op.param1)
                                 xname = client.getContact(op.param2).displayName
                                 Oa = 'ud4082219b6754e7b610f84d07d3b436b'
-                                client.sendKontok(op.param1, Oa)
-                                client.sendMentionV2(op.param1, "тerιмa ĸaѕιн @! тelaн мengυndang вoт ιnι!\n\nwajιв add oa dιaтaѕ! \nĸeтιĸ нelp υnтυĸ мelιнaт ғιтυre вoт ιnι!", [op.param2])                                                        
+                                sendKontok(op.param1, Oa)
+                                sendMentionV2(op.param1, "тerιмa ĸaѕιн @! тelaн мengυndang вoт ιnι!\n\nwajιв add oa dιaтaѕ! \nĸeтιĸ нelp υnтυĸ мelιнaт ғιтυre вoт ιnι!", [op.param2])                                                        
                         else:
                             client.acceptGroupInvitation(op.param1)
                             Oa = 'ud4082219b6754e7b610f84d07d3b436b'
-                            client.sendKontok(op.param1, Oa)
+                            sendKontok(op.param1, Oa)
                             client.sendMessage(op.param1, "wajιв add oa dιaтaѕ! \nĸeтιĸ нelp υnтυĸ мelιнaт ғιтυre вoт ιnι!")
                     elif wait["autoCancel"]["on"] == True:
                         if len(G.members) <= wait["autoCancel"]["members"]:
                             client.acceptGroupInvitation(op.param1)
                             Oa = 'ud4082219b6754e7b610f84d07d3b436b'
-                            client.sendKontok(op.param1, Oa)
+                            sendKontok(op.param1, Oa)
                             client.sendMessage(op.param1,"мaaғ! мeмвer anda вelυм мencυĸυpι😊 ѕιlaнĸan нυвυngι oa dιaтaѕ!")
                             client.leaveGroup(op.param1)
                 else:
