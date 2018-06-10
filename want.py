@@ -1,14 +1,27 @@
 # -*- coding: utf-8 -*-
-from linepy import *
-import json, time, random, tempfile, os, sys
+
+from LineAPI.linepy import *
+from LineAPI.akad.ttypes import Message
+from LineAPI.akad.ttypes import ContentType as Type
 from gtts import gTTS
+from time import sleep
+from datetime import datetime, timedelta
+from bs4 import BeautifulSoup
 from googletrans import Translator
+from humanfriendly import format_timespan, format_size, format_number, format_length
+import time, random, sys, json, codecs, threading, glob, re, string, os, requests, six, ast, pytz, urllib, urllib3, urllib.parse, traceback, atexit
 
 
 #client = LineClient()
 #client = LINE(id='EMAIL HERE', passwd='PASSWORD HERE')
 client = LINE('EtgdRunaEfLZyN5f6hzb.ggNCLqZ5irfKOvdzgQfq2W.08Wzj68hDLbzrE6aS/c0LnIvlDLa/jOsGxwekU9qON0=')
+clientMid = client.profile.mid
+clientProfile = client.getProfile()
+clientSettings = client.getSettings()
 client.log("Auth Token : " + str(client.authToken))
+botStart = time.time()
+
+msg_dict = {}
 
 # Initialize OEPoll with LINE instance
 oepoll = OEPoll(client)
