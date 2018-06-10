@@ -335,29 +335,6 @@ def NOTIFIED_READ_MESSAGE(op):
     except:
         pass
 
-def RECEIVE_MESSAGE(op):
-    msg = op.message
-    try:
-        if msg.contentType == 0:
-            try:
-                if msg.to in wait2['readPoint']:
-                    if msg._from in wait2["ROM"][msg.to]:
-                        del wait2["ROM"][msg.to][msg._from]
-                else:
-                    pass
-            except:
-                pass
-        else:
-            pass
-          
-    except KeyboardInterrupt:
-				sys.exit(0)
-    except Exception as error:
-	pass
-    #    print error
-     #   print ("\n\nRECEIVE_MESSAGE\n\n")
-        return
-    
 def waktu(secs):
     mins, secs = divmod(secs,60)
     hours, mins = divmod(mins,60)
