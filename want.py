@@ -496,14 +496,6 @@ while True:
                 except:
                     pass
 	
-            if op.type == 55:
-	        try:
-	          group_id = op.param1
-	          user_id=op.param2
-	          subprocess.Popen('echo "'+ user_id+'|'+str(op.createdTime)+'" >> dataSeen/%s.txt' % group_id, shell=True, stdout=subprocess.PIPE, )
-	        except Exception as e:
-	          print e
-	
             if op.type == 13:
                 print op.param1
                 print op.param2
