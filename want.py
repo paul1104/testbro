@@ -10,8 +10,10 @@ from googletrans import Translator
 client = LINE('EtgdRunaEfLZyN5f6hzb.ggNCLqZ5irfKOvdzgQfq2W.08Wzj68hDLbzrE6aS/c0LnIvlDLa/jOsGxwekU9qON0=')
 client.log("Auth Token : " + str(client.authToken))
 
-channel = LINE(client)
-client.log("Channel Access Token : " + str(channel.channelAccessToken))
+# Initialize Channel with LINE
+channel = Channel(client, client.server.CHANNEL_ID['LINE_MUSIC'])
+channelToken = channel.getChannelResult()
+client.log("Channel Token : " + str(channelToken))
 
 # Initialize OEPoll with LINE instance
 oepoll = OEPoll(client)
