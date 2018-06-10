@@ -14,7 +14,7 @@ import time, random, sys, json, codecs, threading, glob, re, string, os, request
 
 #client = LineClient()
 #client = LINE(id='EMAIL HERE', passwd='PASSWORD HERE')
-client = LINE('EtgdRunaEfLZyN5f6hzb.ggNCLqZ5irfKOvdzgQfq2W.08Wzj68hDLbzrE6aS/c0LnIvlDLa/jOsGxwekU9qON0=')
+client = LINE('')
 clientMid = client.profile.mid
 clientProfile = client.getProfile()
 clientSettings = client.getSettings()
