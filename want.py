@@ -496,7 +496,7 @@ while True:
                 except:
                     pass
 	
-	    if op.type == 55:
+            if op.type == 55:
 	        try:
 	          group_id = op.param1
 	          user_id=op.param2
