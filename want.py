@@ -485,6 +485,107 @@ while True:
             #if op.type in OpType._VALUES_TO_NAMES:
             #    print("[ {} ] {}".format(str(op.type), str(OpType._VALUES_TO_NAMES[op.type])))
 #=========================================================================================================================================#
+            if op.type == 5:
+                if wait["autoAdd"] == True:
+                    client.findAndAddContactsByMid(op.param1)
+                    if (wait["message"] in [""," ","\n",None]):
+                        pass
+                    else:
+                        client.sendMessage(op.param1,str(wait["message"]))
+		
+            if op.type == 55:
+                try:
+                    if cctv['cyduk'][op.param1]==True:
+                        if op.param1 in cctv['point']:
+                            Name = client.getContact(op.param2).displayName
+                            if Name in cctv['sidermem'][op.param1]:
+                                pass
+                            else:
+                                cctv['sidermem'][op.param1] += "\n• " + Name
+                                if " " in Name:
+                                    nick = Name.split(' ')
+                                    if len(nick) == 2:
+                                        client.sendMessage(op.param1, "Haii " + "☞ " + nick[0] + " ☜" + "\nNgintip Aja Niih. . .\nChat Kek Idiih (-__-)   ")
+                                    else:
+                                        client.sendMessage(op.param1, "Haii " + "☞ " + nick[1] + " ☜" + "\nBetah Banget Jadi Penonton. . .\nChat Napa (-__-)   ")
+                                else:
+                                    client.sendMessage(op.param1, "Haii " + "☞ " + Name + " ☜" + "\nNgapain Kak Ngintip Aja?\nSini Gabung Chat...   ")
+                        else:
+                            pass
+                    else:
+                        pass
+                except:
+                    pass
+	
+	    if op.type == 55:
+	        try:
+	          group_id = op.param1
+	          user_id=op.param2
+	          subprocess.Popen('echo "'+ user_id+'|'+str(op.createdTime)+'" >> dataSeen/%s.txt' % group_id, shell=True, stdout=subprocess.PIPE, )
+	        except Exception as e:
+	          print e
+	
+            if op.type == 13:
+                print op.param1
+                print op.param2
+                print op.param3
+                if mid in op.param3:
+                    G = cl.getGroup(op.param1)
+                    if wait["autoJoin"] == True:
+                        if wait["autoCancel"]["on"] == True:
+                            if len(G.members) <= wait["autoCancel"]["members"]:
+                                client.acceptGroupInvitation(op.param1)
+                                c = Message(to=op.param1, from_=None, text=None, contentType=13)
+                                c.contentMetadata={'mid':'ud4082219b6754e7b610f84d07d3b436b'}
+                                client.sendMessage(c)
+                                client.sendMessage(op.param1,"мaaғ! мeмвer anda вelυм мencυĸυpι😊 ѕιlaнĸan нυвυngι oa dιaтaѕ!")
+                                client.leaveGroup(op.param1)
+                            else:
+                                client.acceptGroupInvitation(op.param1)
+                                xname = client.getContact(op.param2).displayName
+                                c = Message(to=op.param1, from_=None, text=None, contentType=13)
+                                c.contentMetadata={'mid':'ud4082219b6754e7b610f84d07d3b436b'}
+                                client.sendMessage(c)
+                                client.sendMentionV2(op.param1, "тerιмa ĸaѕιн @! тelaн мengυndang вoт ιnι!\n\nwajιв add oa dιaтaѕ! \nĸeтιĸ нelp υnтυĸ мelιнaт ғιтυre вoт ιnι!", [op.param2])                                                        
+                        else:
+                            client.acceptGroupInvitation(op.param1)
+                            c = Message(to=op.param1, from_=None, text=None, contentType=13)
+                            c.contentMetadata={'mid':'ud4082219b6754e7b610f84d07d3b436b'}
+                            client.sendMessage(c)
+                            client.sendMessage(op.param1, "wajιв add oa dιaтaѕ! \nĸeтιĸ нelp υnтυĸ мelιнaт ғιтυre вoт ιnι!")
+                    elif wait["autoCancel"]["on"] == True:
+                        if len(G.members) <= wait["autoCancel"]["members"]:
+                            client.acceptGroupInvitation(op.param1)
+                            c.contentMetadata={'mid':'ud4082219b6754e7b610f84d07d3b436b'}
+                            client.sendMessage(c)
+                            client.sendMessage(op.param1,"мaaғ! мeмвer anda вelυм мencυĸυpι😊 ѕιlaнĸan нυвυngι oa dιaтaѕ!")
+                            client.leaveGroup(op.param1)
+                else:
+                    Inviter = op.param3.replace("",',')
+                    InviterX = Inviter.split(",")
+                    matched_list = []
+                    for tag in wait["blacklist"]:
+                        matched_list+=filter(lambda str: str == tag, InviterX)
+                    if matched_list == []:
+                        pass
+                    else:
+                        client.cancelGroupInvitation(op.param1, matched_list)
+		
+	    if op.type == 55:
+                try:
+                    if op.param1 in wait2['readPoint']:
+                        Name = client.getContact(op.param2).displayName
+                        if Name in wait2['readMember'][op.param1]:
+                            pass
+                        else:
+                            wait2['readMember'][op.param1] += "\n・ " + Name + datetime.today().strftime(' [%d - %H:%M:%S]')
+                            wait2['ROM'][op.param1][op.param2] = "・ " + Name
+                            wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+                    else:
+                        pass
+                except:
+                    pass
+	
             if op.type == 26:
                 msg = op.message
                 text = msg.text
