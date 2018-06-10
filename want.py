@@ -48,9 +48,9 @@ while True:
                                 client.sendMessage(receiver, None, contentMetadata={'mid': sender}, contentType=13)
                             elif text.lower() == 'speed':
                                 start = time.time()
-                                client.sendText(receiver, "TestSpeed")
+                                client.sendMessage(receiver, "TestSpeed")
                                 elapsed_time = time.time() - start
-                                client.sendText(receiver, "%sdetik" % (elapsed_time))
+                                client.sendMessage(receiver, "%sdetik" % (elapsed_time))
                             elif 'spic' in text.lower():
                                 try:
                                     key = eval(msg.contentMetadata["MENTION"])
