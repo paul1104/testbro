@@ -20,7 +20,7 @@ import wikipedia
 import shutil
 
 #cl = LineClient() ----> Buat Login by QR
-cl = LINE(authToken='Et1fd26gCtgbLdd2jDgb.ggNCLqZ5irfKOvdzgQfq2W.EcY3RGwnjaFPDOgsRiTBxCjdpA9By/UR4Yq00WtS09M=')
+cl = LINE('Et1fd26gCtgbLdd2jDgb.ggNCLqZ5irfKOvdzgQfq2W.EcY3RGwnjaFPDOgsRiTBxCjdpA9By/UR4Yq00WtS09M=')
 cl.log("Auth Token : " + str(cl.authToken))
 
 # Initialize LineChannel with LineClient
