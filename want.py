@@ -321,7 +321,7 @@ def sendMentionV2(to, text="", mids=[]):
     client.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
     
 def NOTIFIED_READ_MESSAGE(op):
-    print op
+   # print op
     try:
         if op.param1 in wait2['readPoint']:
             Name = client.getContact(op.param2).displayName
@@ -353,8 +353,9 @@ def RECEIVE_MESSAGE(op):
     except KeyboardInterrupt:
 				sys.exit(0)
     except Exception as error:
-        print error
-        print ("\n\nRECEIVE_MESSAGE\n\n")
+	pass
+    #    print error
+     #   print ("\n\nRECEIVE_MESSAGE\n\n")
         return
     
 def waktu(secs):
@@ -379,11 +380,12 @@ def summon(to, nama):
     msg.to = to
     msg.text = "\xe2\x95\x94\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\n"+bb+"\xe2\x95\x9a\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90"
     msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+aa+']}','EMTVER':'4'}
-    print "[Command] Tag All"
+    #print "[Command] Tag All"
     try:
        client.sendMessage(msg)
     except Exception as error:
-       print error
+       pass
+   #    print error
 
 def sendMessageWithMention(to, mid):
     try:
@@ -395,7 +397,7 @@ def sendMessageWithMention(to, mid):
         msg.contentMetada = {'MENTION':'{"MENTIONEES":['+aa+']}'}
         client.sendMessage(msg)
     except Exception as error:
-        print error
+        pass
         
 def mention(to, nama):
     aa = ""
@@ -414,11 +416,11 @@ def mention(to, nama):
     msg.to = to
     msg.text = "\xe2\x95\x94\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\n"+bb+"\xe2\x95\x9a\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90"
     msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+aa+']}','EMTVER':'4'}
-    print "[Command] Tag All"
+    #print "[Command] Tag All"
     try:
        client.sendMessage(msg)
     except Exception as error:
-       print error
+       pass
 
 def mention(to,nama):
     aa = ""
@@ -442,7 +444,7 @@ def mention(to,nama):
     try:
          client.sendMessage(msg)
     except Exception as error:
-        print error
+        pass
 
 def cms(string, commands): #/XXX, >XXX, ;XXX, ^XXX, %XXX, $XXX...
     tex = ["+","@","/",">",";","^","%","$","＾","サテラ:","サテラ:","サテラ：","サテラ："]
