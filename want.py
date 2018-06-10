@@ -541,22 +541,7 @@ while True:
                         pass
                     else:
                         client.cancelGroupInvitation(op.param1, matched_list)
-		
-	    if op.type == 55:
-                try:
-                    if op.param1 in wait2['readPoint']:
-                        Name = client.getContact(op.param2).displayName
-                        if Name in wait2['readMember'][op.param1]:
-                            pass
-                        else:
-                            wait2['readMember'][op.param1] += "\n・ " + Name + datetime.today().strftime(' [%d - %H:%M:%S]')
-                            wait2['ROM'][op.param1][op.param2] = "・ " + Name
-                            wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-                    else:
-                        pass
-                except:
-                    pass
-	
+
             if op.type == 26:
                 msg = op.message
                 text = msg.text
